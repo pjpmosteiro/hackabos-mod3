@@ -2,6 +2,7 @@
 Ejemplo genérico de Objetos y Herencia
 #### Vehiculo
 |Atributos|Métodos|
+|---------|-----------|
 |Bastidor|Arrancar()|
 |Marca|Parar()|
 |Color||
