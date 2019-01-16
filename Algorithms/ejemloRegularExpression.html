@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>  
+  <head>  
+    <meta http-equiv = "Content-Type" content = "text / html; charset = ISO-8859-1">  
+    <meta http-equiv = "Content-Script-Type" content = "text / javascript">  
+    <script type = "text/javascript">  
+      var re = /(?:\d{3}|\(\d{3}\))([-\/\.])\d{3}\1\d{4}/;  
+      function testInfo (phoneInput) {  
+        var OK = re.exec (phoneInput.value);  
+        if (!OK)  
+          window.alert(RegExp.input + "no es un numero de telefono con codigo de area!");  
+        else
+          window.alert("Gracias, su número de telefono es" + OK[0]);  
+      }  
+    </script>  
+  </head>  
+  <body>  
+    <P> Introduzca su numero de telefono (con el codigo de area) y haga clic en "Check".<br>
+        Francia El formato esperado es como ###-###-####. </ p>
+    <form action = "#">  
+    <button onclick="testInfo (document.getElementById('telefono'));"> <input id="telefono"> Verificar </button>
+    </form>  
+  </body>  
+</html>
