@@ -80,9 +80,11 @@ Documentos
 ### Algoritmos básicos
 
 Expresiones regulares 
-
+[Lesson Regular Expressions](Algorithms\regularExpresion.md)
 Arrays: pop, push Iteraciones
+
 Arrays multidimensionales
+
 Arboles de datos
 Ordenacion https://github.com/GreenGold33/lab-es6-algorithms
 
