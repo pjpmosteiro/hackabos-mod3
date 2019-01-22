@@ -82,10 +82,18 @@ Documentos
 Expresiones regulares 
 [Lesson Regular Expressions](Algorithms\regularExpresion.md)
 Arrays: pop, push Iteraciones
+[Array1](Algorithms\array.example.js)
+[Array2](Algorithms\array.exercises.js)
 
 Arrays multidimensionales
+[Array1](Algorithms\arraymulti.exercise1.js)
+
+Listas Enlazadas (Linked list)
 
 Arboles de datos
+[Tree Exercice](Algorithms\tree.exercise1.js)
+
+
 Ordenacion https://github.com/GreenGold33/lab-es6-algorithms
 
 ### Patrones de diseño
