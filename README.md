@@ -89,12 +89,16 @@ Arrays multidimensionales
 [Array1](Algorithms\arraymulti.exercise1.js)
 
 Listas Enlazadas (Linked list)
-
+[Linked](Algorithms\linked.exercise1.js)
 Arboles de datos
 [Tree Exercice](Algorithms\tree.exercise1.js)
 
 
-Ordenacion https://github.com/GreenGold33/lab-es6-algorithms
+Ordenacion 
+[Theory](https://en.wikipedia.org/wiki/Sorting_algorithm)
+[Basic Sort](Algorithms\sorting.basic.js)
+[Bubble Sort](Algorithms\sorting.bubble.js)
+[Merge Sort](Algorithms\sorting.merge.js)
 
 ### Patrones de diseño
 Module Design Pattern
@@ -102,7 +106,5 @@ Module Design Pattern
 	Observer Design Pattern
 	Singleton
 
-	Métodos recursivos
-	Ordenación
 ### Testing TDD
 
