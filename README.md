@@ -49,32 +49,8 @@ Beneficios
 
 ### Bases de datos
 #### Mysql
-Montar base de datos Mysql (experiencia controlada)
-Tablas
-Vistas 
-Procedimientos
-Campos
-Tipos de dato
-Primary & Foreing keys
-Relaciones 1-1, 1-N, N-M
-Consultas basicas CRUD
-Consultas complejas (JOIN)
-Optimización de consultas
-Triggers
-Seguridad (permisos)
-Conectividad (cadenas de conexión)
-
-Creación de una base de datos de ejemplo para el siguiente módulo
-Import/Export
-Relaciones reflexivas (relaciones con sigo mismo)
-Clases
-Diseño de una base de datos normalizada
 #### MongoDB
-	Montar MongoDB
-		Creación bases de datos
-		Colecciones
-Documentos		
-		Consulta de datos (indexación, agregación, limitar documentos)
+	
 	Cuando utilizar:https://aukera.es/blog/bases-de-datos-relacionales-vs-no-relacionales/
 
 ### Algoritmos básicos
