@@ -3,298 +3,121 @@ Montar MongoDB
 		Colecciones
 Documentos		
 		Consulta de datos (indexación, agregación, limitar documentos)
-# Mondo 
+# MongoDB 
 MongoDB es probablemente la opción de base de datos NoSQL más frecuente para el backend de las aplicaciones web. Es una fuente abierta y relativamente fácil de usar. Funciona bien con las aplicaciones web modernas escritas en Node.js o Python. 
 
 Trabajar con MongoDB es bastante diferente de las bases de datos relacionales, ya que su lenguaje de consulta es completamente diferente de SQL. Realiza la misma operación CURD, las funciones de carga de archivos planos, las consultas condicionales y las funciones de agregación que el mundo relacional. Con MongoDB, no existen los join (relaciones entre tablas).
-## Ejercicios
-1 Crear base de datos
+Trabajar con MongoDB es bastante diferente de las bases de datos relacionales, ya que su lenguaje de consulta es completamente diferente de SQL. Realiza la misma operación CURD, las funciones de carga de archivos planos, las consultas condicionales y las funciones de agregación que el mundo relacional. Con MongoDB, no existen los join (relaciones entre tablas).
 
-	1 Cree una base de datos llamada usermanaged, borrar  y volver a crear. Compruebe en qué base de datos se está trabando.
+## Organizacion de la informacíón
+* Servidor
+  * Base de datos
+    * Colección
+      * Documentos
+        * Campos
 
-2 Crear una colección e insertar un registro
+* Mongod: Servidor de bases de datos de MongoDB
+* Mongo: Cliente para la interacción con la base de datos MongoDB
+* Mongofiles: Herramienta para trabajar con ficheros directamente sobre la base de datos MongoDB
 
-	1 Cree una colección llamada clientes en usermanaged creada en el Ejercicio 1 e inserte el documento a continuación. Compruebe si el documento está insertado correctamente.
 
-```json
-{ "firstName":"John", 
-  "lastName":"West", 
-  "email":"john.west@mail.com", 
-  "phone":"032345432134",
-  "BusinessType": ["Sell", "Sugar", "Drinks"],
-  "Reference":100,
-  "Company":"Coca-Cola"}
+Alta escalabilidad
+
+### Replicación 
+* VOlatilidad
+* Servidor Maestro - Servidor Esclavos
+
+### Escalabilidad horizontal
+Añadir nuevos servidores (nodos) que permitan el almacenamieto distribuido entre diversas máquinas.
+1. Limites potenciales de la escalabilidad
+2. Tolerancia a fallos
+3. Facilidad de administración
+4. Facilidad de implementación
+5. Expectativa de escalabilidad de rendimiento
+
+**Sharding**
+Método para dividir los datos a lo largo de los múltiples servidores de la solución de manera automática
+
+1. Un clúster transparente
+2. Disponibilidad para lecturas y escrituras
+3. Crecimiento ágil
+
+**Balanceo**
+
+**El cluster**
+* Shards para el almacenamiento distribuido de datos
+* Mongos para enrutar las peticiones hacia el dato correcto
+* Configuracion servidor para hacer el seguimiento del estado del clúster
+
+## Instrucciones
+[Referencia](https://docs.mongodb.com/manual/reference)
+Ejecutar cliente
+```
+> mongo
+```
+Lista de instrucciones
+```
+db.help()
 ```
 
-3 Carga de archivos JSON
-
-	1 Cree una colección llamada transactions en usermanaged (borrar si ya existe) y cargue de forma masiva los datos de un archivo json, transaction.json (vea los datos al final de las preguntas).	
-
-	2 Anexa los registros con el mismo archivo, transaction.json
-
-	3 Insertar el registro del nuevo archivo llamado transaction_upsert.json (vea los datos al final de las preguntas).
-
-4 Archivo CSV de carga masiva
-
-	1 Crear una colección y cargar datos desde un archivo CSV será múltiples filas. Definir las claves de la fila de encabezado.
-
-5 Consulta MongoDB con Condiciones (Esta pregunta utiliza la colección (transacciones) creadas en el Ejercicio 3)
-
-	1 Encuentra cualquier registro donde Nombre es Tom
-
-	2 Encuentre cualquier registro donde el monto de pago total (Pago.Total) es 400.
-
-	3 Encuentre cualquier registro donde el precio (Transaction.price) sea mayor que 400.
-
-	4 Busque cualquier registro donde Note sea nulo o falte la clave.
-
-	5 Encuentre cualquier registro donde exista Nota y su valor sea nulo.
-
-	6 Encuentra cualquier registro donde no exista la clave de nota.
-
-6 Agregación con MongoDB (Esta pregunta utiliza la colección (transacciones) creadas en el Ejercicio 3.)
-
-	1 Calcule el monto total de la transacción sumando Pago. Total en todos los registros.
-
-	2 Obtenga el precio total por registro sumando los valores de precio en la matriz de Transacción (Transaction.price).
-
-	3 Calcule los pagos totales (Pago.Total) para cada tipo de pago (Tipo de pago).
-
-	4 Encuentra la identificación máxima.
-
-	5 Encuentra el precio máximo (Transaction.price).
-7 Operaciones CRUD (Esta pregunta utiliza la colección (transacciones) creadas en el Ejercicio 3. )
-
-CRUD: Crear, Leer, Actualizar y Eliminar.
-
-	1 Inserte un registro a continuación.
-
-	2 Actualizando el nuevo registro insertado arriba. Hacer nombre = ’Registro actualizado’ & Note = ’¡Actualizado!’
-
-	3 Elimine el registro insertado arriba utilizando Id.
-
-8 Creación de usuario
-
-	1 Cree un usuario de solo lectura que pueda consultar registros de colecciones de todas las bases de datos.
-
-	2 Cree un usuario escritor que pueda crear colecciones y realizar operaciones CRUD en cualquier colección.
-
-	3 Cree un usuario administrado por el usuario que pueda realizar la operación de escritura en la base de datos administrada por el usuario y lea solo para el resto de las bases de datos.
-
-### Datos JSON
-
-```json
-[
-{
-    "Id": 100,
-    "Name": "John",
-    "TransactionId": "tran1",
-  "Transaction": [
-    {
-    "ItemId":"a100",
-    "price": 200
-    },
-    {
-    "ItemId":"a110",
-    "price": 200   
-    }
-  ],
-  "Subscriber": true,
-  "Payment": {
-    "Type": "Credit-Card",
-    "Total": 400,
-    "Success": true
-  },
-  "Note": "1st Complete Record"
-},
-{
-    "Id": 101,
-    "Name": "Tom",
-    "TransactionId": "tran2",
-  "Transaction": [
-    {
-    "ItemId":"a100",
-    "price": 200
-    },
-    {
-    "ItemId":"a110",
-    "price": 200   
-    }
-  ],
-  "Subscriber": true,
-  "Payment": {
-    "Type": "Debit-Card",
-    "Total": 400,
-    "Success": true
-  },
-  "Note":null
-},
-{
-    "Id": 102,
-    "Name": "Margaret",
-    "TransactionId": "tran3",
-  "Transaction": [
-    {
-    "ItemId":"a100",
-    "price": 200
-    },
-    {
-    "ItemId":"a110",
-    "price": 200   
-    }
-  ],
-  "Subscriber": true,
-  "Payment": {
-    "Type": "Credit-Card",
-    "Total": 400,
-    "Success": true
-  }
-},
-{
-    "Id": 103,
-    "Name": "Dylan",
-    "TransactionId": "tran4",
-  "Transaction": [
-    {
-    "ItemId":"a100",
-    "price": 200
-    },
-    {
-    "ItemId":"a110",
-    "price": 200   
-    }
-  ],
-  "Subscriber": true,
-  "Payment": null,
-  "Note": "Payment is Null"
-}
-]
+db.nombrecoleccion.instruccion()
 ```
-Aquí está el archivo JSON para upsert en el ejercicio 3-3.
-```json
-[
-{
-    "Id": 100,
-    "Name": "ZZZZZZ",
-    "TransactionId": "tran1",
-  "Transaction": [
-    {
-    "ItemId":"a100",
-    "price": 2000000000
-    },
-    {
-    "ItemId":"a110",
-    "price": 200   
-    }
-  ],
-  "Subscriber": true,
-  "Payment": {
-    "Type": "Credit-Card",
-    "Total": 400,
-    "Success": true
-  },
-  "Note": "1st Complete Record"
-},
-{
-    "Id": 101,
-    "Name": "Tom",
-    "TransactionId": "tran2",
-  "Transaction": [
-    {
-    "ItemId":"a100",
-    "price": 200
-    },
-    {
-    "ItemId":"a110",
-    "price": 200   
-    }
-  ],
-  "Subscriber": true,
-  "Payment": {
-    "Type": "Debit-Card",
-    "Total": 400,
-    "Success": true
-  },
-  "Note":null
-},
-{
-    "Id": 102,
-    "Name": "Margaret",
-    "TransactionId": "tran3",
-  "Transaction": [
-    {
-    "ItemId":"a100",
-    "price": 200
-    },
-    {
-    "ItemId":"a110",
-    "price": 200   
-    }
-  ],
-  "Subscriber": true,
+db.idiomas.insert({nombre:'Español',origen:'Reino de Castilla',ranking:'3'})
 
-  "Payment": {
-    "Type": "Credit-Card",
-    "Total": 400,
-    "Success": true
-  }
-},
-{
-    "Id": 103,
-    "Name": "Dylan",
-    "TransactionId": "tran4",
-  "Transaction": [
-    {
-    "ItemId":"a100",
-    "price": 200
-    },
-    {
-    "ItemId":"a110",
-    "price": 200   
-    }
-  ],
-  "Subscriber": true,
-  "Payment": null,
-  "Note": "Payment is Null"
-},
-{
-    "Id": 104,
-    "Name": "Oliver",
-    "TransactionId": "tran5",
-  "Transaction": [
-    {
-    "ItemId":"a100",
-    "price": 200
-    },
-    {
-    "ItemId":"a110",
-    "price": 200   
-    }
-  ],
-  "Subscriber": true,
+db.idiomas.find()
+```
 
-  "Payment": {
-    "Total": 400,
-    "Success": true
-  },
-  "Note": "Payment Type is missing"
-},
-{
-    "Id": 105,
-    "Name": "Sarah",
-    "TransactionId": "tran6",
-  "Transaction": [
-    {
-    "ItemId":"a100",
-    "price": 200
-    },
-    {
-    "ItemId":"a110",
-    "price": 200
-    }
-  ],
-  "Subscriber": true,
-  "Note": "Payment is missing"
-}
-]
- ```
+db.idiomas.find({nombre:'Español'})
+Los datos deben tener un campo _id (generado por usuario) o un ObjectId (generado por el sistema)
+
+### Find
+```
+db.collection.find(query, projection)
+db.collection.find( { qty: { $gt: 4 } } )
+```
+### Update
+```
+db.collection.insert(
+   <document or array of documents>,
+   {
+     writeConcern: <document>,
+     ordered: <boolean>
+   }
+)
+db.collection.update({nombre: ‘Español’}, {$set: {origen: ‘Castila y León}})
+```
+* $set: establece el valor de un campo
+* $inc: incrementa o decrementa un campo en función del valor indicado
+* $unset: elimina un campo añadido
+* $push: añade un valor al campo, trabajando con arrays
+* $addtoSet: añade valores a un array
+* $pop: elimina el último elemento de un array
+* $pull: elimina todas las concurrencias que coincidan con el valor  indicado para el campo requerido
+* $rename: renombrado de un campo
+* $bit: actualización bit a bit de un campo
+```
+db.people.update(
+   { name: "Andy" },
+   {
+      name: "Andy",
+      rating: 1,
+      score: 1
+   },
+   { upsert: true }
+)
+```
+### Remove
+```
+db.collection.remove(
+   <query>,
+   {
+     justOne: <boolean>,
+     writeConcern: <document>,
+     collation: <document>
+   }
+)
+
+db.bios.remove( { } )
+db.products.remove( { qty: { $gt: 20 } } )
+
+```
