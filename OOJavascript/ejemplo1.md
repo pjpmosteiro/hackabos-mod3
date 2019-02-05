@@ -13,6 +13,7 @@ Ejemplo genérico de Objetos y Herencia
 
 #### Coche:Vehiculo
 |Atributos|Métodos|
+|---------|-----------|
 |Bastidor|Arrancar()|
 |Marca|Parar()|
 |Color|LimpiarParabrisas|
@@ -27,6 +28,7 @@ Marca
 
 #### Camión:Vehículo
 |Atributos|Métodos|
+|---------|-----------|
 |Bastidor|Arrancar()|
 |Marca|Parar()|
 |Color|LimpiarParabrisas|

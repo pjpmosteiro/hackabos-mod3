@@ -1,7 +1,7 @@
 ### Ejemplo 2
 Una clase en javascript es una funcion con la primera letra en mayúscula
 
-'''javascript
+```javascript
 function Profesor(nombre, edad)
 {
     this.nombre = nombre;
@@ -9,5 +9,4 @@ function Profesor(nombre, edad)
 }
 
 const profesor1 = new Profesor('marcos',44);
-
-'''
+```
