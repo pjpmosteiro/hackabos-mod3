@@ -40,10 +40,10 @@ Nota: Esto puede aplicarse a casi cualquier lenguaje: C#, C++, Java
 
 Beneficios 
 
-* Los objetos modelados en 'cosas' reales es el elemento pricipal de cualquier aplicacion orientada a objetos
+* Los objetos modelados en 'cosas' reales es el elemento principal de cualquier aplicacion orientada a objetos
 * Encapsulacion protege a la información de ediciones no controladas.
 * Los objetos tienen funciones que trabajan sobre los propios datos que estos contienen.
-* LAs clases so como plantillas para instanciar objetos.
+* Las clases son como plantillas para instanciar objetos.
 * La herencia es una herramienta para evitar la redundancia.
 * La programación OO es facil de 'leer'.
 
