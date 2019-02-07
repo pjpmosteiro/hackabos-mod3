@@ -14,3 +14,6 @@ Profesor.prototype.soyElProfe = function () {
 
 
 profesor1.soyElProfe();
+
+
+profesor1.cumpleanos();
