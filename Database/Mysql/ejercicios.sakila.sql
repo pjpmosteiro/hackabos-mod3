@@ -1,79 +1,84 @@
 
--- 1a. Display the first and last names of all actors from the table actor.
+-- 1a. Muestra el nombre y apellidos de todos los actores de la tabla "actor.
 
--- 1b. Display the first and last name of each actor in a single column in upper case letters. Name the column Actor Name.
+-- 1b. Muestra el nombre y apellido de cada actor en una sola columna en mayúsculas. Nombra a la columna "Actor Name"
 
--- 2a. You need to find the ID number, first name, and last name of an actor, of whom you know only the first name, "Joe." 
---      What is one query would you use to obtain this information?
+-- 2a. Encuentra el número de ID, nombre y apellido de un actor, del cual solo sabes su nombre, "Joe".
+--      Que consulta unica usarias para obtener esta información?
 
--- 2b. Find all actors whose last name contain the letters GEN:
 
--- 2c. Find all actors whose last names contain the letters LI. This time, order the rows by last name and first name, in that order:
+-- 2b. Encuentra todos los actores cuyo apellido contiene las letras GEN:
 
--- 2d. Using IN, display the country_id and country columns of the following countries: Afghanistan, Bangladesh, and China:
+-- 2c. Encuentra todos los actores cuyos apellidos contengan las letras LI. Al mismo tiempo, ordena las celdas por apellido y nombre, en este orden:
 
--- 3a. Add a middle_name column to the table actor. Position it between first_name and last_name. Hint: you will need to specify the data type.
+-- 2d. Usando IN muestra las columnas "country_id" y "country" de los siguientes paises: Afghanistan, Bangladesh, and China:
 
--- 3b. You realize that some of these actors have tremendously long last names. 
---  Change the data type of the middle_name column to blobs.
+-- 3a. Añade una columna llamada "middle_name" a la tabla "actor". Posiciónala entre "first_name" y "last_name". Pista: Tendrás que especificar el tipo de dato.
 
--- 3c. Now delete the middle_name column.
+-- 3b. Te das cuenta de que algunos de los actores tienen apellidos tremendamente largos
+--  Cambia el tipo de dato de la columna "middle_name" a "blobs"
 
--- 4a. List the last names of actors, as well as how many actors have that last name.
+-- 3c. Ahora borra la columna "middle_name"
 
--- 4b. List last names of actors and the number of actors who have that last name, 
---     but only for names that are shared by at least two actors
 
--- 4c. Oh, no! The actor HARPO WILLIAMS was accidentally entered in the actor table as GROUCHO WILLIAMS, 
---     the name of Harpo's second cousin's husband's yoga teacher. Write a query to fix the record.
+-- 4a. Lista los apellidos de los actores, asi como cuantos actores tienen apellido.
 
--- 4d. Perhaps we were too hasty in changing GROUCHO to HARPO. It turns out that GROUCHO was the correct 
--- name after all! 
--- In a single query, if the first name of the actor is currently HARPO, 
--- change it to GROUCHO. Otherwise, change the first name to MUCHO GROUCHO, as that is exactly what 
--- the actor will be with the grievous error. BE CAREFUL NOT TO CHANGE THE FIRST NAME OF EVERY ACTOR 
--- TO MUCHO GROUCHO, HOWEVER! 
--- (Hint: update the record using a unique identifier.)
+-- 4b. Lista los apellidos de los actores y el número de actores quienes tienen apellido,
+--     pero solo para aquellos nombres que son compartidos con al menos dos actores
+
+
+-- 4c. Oh, no! El actor HARPO WILLIAMS ha sido introducido accidentalmente en la tabla "actor" como GROUCHO WILLIAMS, 
+--     el nombre del primo segundo del marido de la profesora de Yoga ;). Escribe una consulta para arreglar el dato.
+
+
+-- 4d. Es posible que nos hayamos precipitado cambiando GROUCHO a HARPO. Resulta que GROUHCO era el nombre
+-- correcto después de todo! 
+-- En una sola consilta, si el primer nombre del actor es actualmente HARPO, 
+-- cambialo por GROUCHO. Por otra parte, cambia el nombre a MUCHO GROUCHO, que es lo que seria exatamente
+-- el actor con el gravísimo error. TEN CUIDADOD DE NO CAMBIAR EL NOMBRE DE TODOS LOS ACTORES
+-- A MUCHO GROUCHO! 
+-- (Pista: actualiza el dato usando un identificador único.)
  
--- 5a. You cannot locate the schema of the address table. Which query would you use to re-create it?
+-- 5a. No puedes localizar el esquema de la tabla "addreess". Que consulta usarias para recrearla?
 
--- 6a. Use JOIN to display the first and last names, as well as the address, of each staff member. Use the tables staff and address:
+-- 6a. Usa JOIN para mostrar los nombres y apellidos, así como las direcciones, de todos los miembros de staff. Usa las tablas "staff" y "address":
 
--- 6b. Use JOIN to display the total amount rung up by each staff member in August of 2005. Use tables staff and payment.
+-- 6b. Usa JOIN para mostrar la cantidad total ganada por cada miembro del staff en Agosto de 2015. Usa las tablas "staff" y "payment".
 
--- 6c. List each film and the number of actors who are listed for that film. Use tables film_actor and film. Use inner join.
+-- 6c. Lista cada película y el número de actores que estan apuntados para esa película. Usa las tablas "film_actor" y "film". Usa inner join.
 
--- 6d. How many copies of the film Hunchback Impossible exist in the inventory system?
+-- 6d. Cuantas copias de la película Hunchback Impossible existen en el sistema de inventario?
 
--- 6e. Using the tables payment and customer and the JOIN command, list the total paid by each customer. 
---     List the customers alphabetically by last name:
+-- 6e. Usanto las tablas "payment" y "customer" y el comando JOIN, lista el total pagado por cada cliente. 
+--     Lista los clientes alfabéticamente por apellido.
 
--- 7a. The music of Queen and Kris Kristofferson have seen an unlikely resurgence. As an unintended consequence, 
---  films starting with the letters K and Q have also soared in popularity. Use subqueries to display the titles of
---  movies starting with the letters K and Q whose language is English.
+-- 7a. La musica de Queen y Kris Kristofferson han obtenido un resurgimiento inesperado. Como consecuencia inesperada,
+--  las películas comenzando por las letras K y Q se han disparado en popularidad. Usa subconsultas para mostrar los títulos
+--  de las películas que comienzan por las letras K y Q cuyo idioma es "English".
 
--- 7b. Use subqueries to display all actors who appear in the film Alone Trip.
+-- 7b. Usa subconsultas para mostrar todos los actores que aparezcan en la película Alone Trip.
 
--- 7c. You want to run an email marketing campaign in Canada, for which you will need the names and 
---     email addresses of all Canadian customers. 
---     Use joins to retrieve this information.
+-- 7c. Quieres lanzar una campaña de marketing por e-mail en Canadá, para lo cual necesitarás saber los nombres y
+--     las direcciones de e-mail de todos los clientes canadienses.
+--     Usa joins para obtener esta información
 
--- 7d. Sales have been lagging among young families, and you wish to target all family movies for a promotion. 
---  Identify all movies categorized as famiy films.
+-- 7d. Las ventas han bajado en las familias jóvenes, y quieres marcar como objetivo todas las peliculas familiares para una promoción.
+--  Identifica todas las películas categorizadas como "family films".
 
--- 7e. Display the most frequently rented movies in descending order.
+-- 7e. Muestra las más frecuentemente alquiladas peliculas en orden descendiente
 
--- 7f. Write a query to display how much business, in dollars, each store brought in.
+-- 7f. Escribe una consulta para mostrar cuanto negocio, en dolares, ha traído cada tienda
 
--- 7g. Write a query to display for each store its store ID, city, and country.
+-- 7g. Escribe una consulta para mostrar, por cada tienda, su ID, ciudad y país
 
--- 7h. List the top five genres in gross revenue in descending order. 
--- (Hint: you may need to use the following tables: category, film_category, inventory, payment, and rental.)
+-- 7h. Lista los 5 generos mas rentables en orden descendiente 
+-- (Pista: puede que necesites usar las siguientes tablas: "category, film_category, inventory, payment, and rental".)
 
--- 8a. In your new role as an executive, you would like to have an easy way of viewing 
---      the Top five genres by gross revenue. Use the solution from the problem above to create a view. 
---      If you haven't solved 7h, you can substitute another query to create a view.
+-- 8a. En tu nuevo rol como ejecutivo, te gustaría tener una forma más fácil de ver 
+--     los 5 géneros más rentables. Usa la solución del problema anterior para crear una vista. 
+--     Si aun no has resuelto el 7º, puedes sustituirlo por cualquier otra consulta para crear una vista
 
--- 8b. How would you display the view that you created in 8a?
+-- 8b. Como mostrarías la vista que has creado en el 8a?
 
--- 8c. You find that you no longer need the view top_five_genres. Write a query to delete it.
+-- 8c. Encuentras que no necesitas la vista de los 5 generos. Escribe una consulta para borrarla.
+
